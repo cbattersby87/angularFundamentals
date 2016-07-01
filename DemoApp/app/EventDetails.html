@@ -12,12 +12,14 @@
           <ul class='nav'>
           </ul>
       </div>
-      <div ng-controller="EventController">
+      <div ng-controller="EventController" style="padding-left: 20px; padding-right: 20px;">
+          <img ng-src="{{event.imageUrl}}" alt="{{event.name}}" />
           <div class='row'>
               <div class='spann11'>
                   <h2>{{event.name}}</h2>
               </div>
           </div>
+
           <div class='row'>
               <div class='span3'>
                   <div><strong>Date:</strong> {{event.date}}</div>
@@ -31,6 +33,26 @@
                   </address>
               </div>
           </div>
+
+          <hr />
+
+          <div>
+              <h3>Sessions</h3>
+              <ul class='thumbnails'>
+                  <li ng-repeat='session in event.sessions'>
+                      <div class='row session'>
+                          <div class='well span9'>
+                              <h4 class='well-title'>{{session.name}}</h4>
+                              <h6 style='margin-top: -10px'>{{session.creatorName}}</h4>
+                              <span>Duration: {{session.duration}}</span><br />
+                              <span>Level: {{session.level}}</span><br />
+                              <p>{{session.abstract}}</p>
+                          </div>
+                      </div>
+                  </li>
+              </ul>
+          </div>
+
       </div>
     </div>
     <script src="/lib/jquery.min.js"></script>
