@@ -4,9 +4,10 @@ eventsApp.controller('EventController',
     function EventController($scope) {
 
         //various directives on the view
+        $scope.sortorder = 'name';
         $scope.snippet = '<span style="color:red">hi there</span>';
         $scope.boolValue = true;
-        $scope.mystyle = {color: 'red'};
+     //   $scope.mystyle = {color: 'red'};
         $scope.myclass = "blue";
         $scope.buttonDisabled = true;
 
