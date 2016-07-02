@@ -9,16 +9,18 @@ eventsApp.controller('EventController',
         $scope.boolValue = true;
         $scope.myclass = "blue";
         $scope.buttonDisabled = true;
-        $scope.event = eventData.event;
+        eventData.getEvent(function(event){
+            $scope.event = event;
+        });
 
-        $scope.upVoteSession = function(session) {
+        $scope.upVoteSession = function (session) {
             session.upVoteCount++;
         };
 
-        $scope.downVoteSession = function(session) {
+        $scope.downVoteSession = function (session) {
             session.upVoteCount--;
         };
 
     }
-    
+
 );
